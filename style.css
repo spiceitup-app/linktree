@@ -1,34 +1,40 @@
 :root {
-  --blue-top: #050c8f;
+  --blue-top: #00198C;
   --blue-mid: #0032d8;
-  --blue-bottom: #0075ff;
+  --blue-bottom: #005FF3;
   --white: #ffffff;
-  --text-dark: #070821;
+  --text-dark: #000028;
   --pink: #ff0f79;
 }
-
+/*  --blue-top: #050c8f;
+  --blue-mid: #0032d8;
+  --blue-bottom: #0075ff;*/
 * {
   box-sizing: border-box;
 }
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
   margin: 0;
 }
 
 body {
   font-family: "Red Hat Text", Arial, sans-serif;
   color: var(--white);
+
+  /* Hintergrund jetzt vollständig */
+  min-height: 100vh;
   background:
     radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
-    linear-gradient(180deg, var(--blue-top) 0%, var(--blue-mid) 48%, var(--blue-bottom) 100%);
+    linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .linktree {
   width: 100%;
   min-height: 100vh;
-  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,15 +50,16 @@ body {
   text-align: center;
 }
 
+/* ❌ Hintergrund entfernt */
 .logo-wrap {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   margin-bottom: 1.75rem;
-  border-radius: 50%;
+  border-radius: 0%;
   display: grid;
   place-items: center;
-  background: linear-gradient(145deg, rgba(14, 82, 255, 0.95), rgba(7, 29, 178, 0.95));
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: none;
+  box-shadow: none;
   overflow: hidden;
 }
 
@@ -64,11 +71,11 @@ body {
 }
 
 h1 {
-  margin: 0 0 1rem;
+  margin: 0 0 1.3rem;
   font-size: clamp(1.1rem, 4.9vw, 1.28rem);
   line-height: 1.25;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   text-wrap: balance;
 }
 
@@ -84,17 +91,25 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.62rem;
-  padding: 0.45rem 0.8rem 0.45rem 0.62rem;
+  padding: 0.40rem 0.8rem 0.45rem 0.7rem;
   border-radius: 999px;
   color: var(--text-dark);
   background: var(--white);
   text-decoration: none;
   font-size: 1.02rem;
-  line-height: 1.18;
+  line-height: 1.3;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+
+  /* ✅ alles linksbündig */
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.store-button span {
+  text-align: left;
 }
 
 .store-button:hover,
@@ -144,9 +159,5 @@ footer a:focus-visible {
   .store-links {
     grid-template-columns: 1fr;
     max-width: 240px;
-  }
-
-  .store-button {
-    justify-content: flex-start;
   }
 }
