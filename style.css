@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("assets/RedHatText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("assets/RedHatText-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Red Hat Text";
+  src: url("assets/RedHatText-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --blue-top: #00198C;
   --blue-mid: #0032d8;
@@ -15,26 +39,27 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   margin: 0;
 }
 
 body {
   font-family: "Red Hat Text", Arial, sans-serif;
   color: var(--white);
-
-  /* Hintergrund jetzt vollständig */
   min-height: 100vh;
+  min-height: 100svh;
   background:
     radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
     linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .linktree {
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,12 +75,11 @@ body {
   text-align: center;
 }
 
-/* ❌ Hintergrund entfernt */
 .logo-wrap {
   width: 90px;
   height: 90px;
   margin-bottom: 1.75rem;
-  border-radius: 0%;
+  border-radius: 0;
   display: grid;
   place-items: center;
   background: none;
@@ -90,11 +114,13 @@ h1 {
   min-height: 54px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.62rem;
   padding: 0.40rem 0.8rem 0.45rem 0.7rem;
   border-radius: 999px;
   color: var(--text-dark);
   background: var(--white);
+  text-align: left;
   text-decoration: none;
   font-size: 1.02rem;
   line-height: 1.3;
@@ -102,10 +128,6 @@ h1 {
   letter-spacing: -0.01em;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
   transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-
-  /* ✅ alles linksbündig */
-  justify-content: flex-start;
-  text-align: left;
 }
 
 .store-button span {
@@ -130,6 +152,65 @@ h1 {
   flex: 0 0 38px;
   display: block;
   object-fit: contain;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  margin: 1.75rem 0 1.25rem;
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.social-icon-links {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  align-items: start;
+  justify-items: center;
+}
+
+.social-icon-link {
+  color: var(--white);
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.social-icon-link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.75);
+  outline-offset: 5px;
+  border-radius: 16px;
+}
+
+.social-icon {
+  width: 46px;
+  height: 46px;
+  display: block;
+  object-fit: contain;
+}
+
+.divider-bottom {
+  margin: 1.25rem 0 1.25rem;
+}
+
+.placeholder-button {
+  width: 100%;
 }
 
 footer {
@@ -159,5 +240,24 @@ footer a:focus-visible {
   .store-links {
     grid-template-columns: 1fr;
     max-width: 240px;
+  }
+
+  .divider,
+  .placeholder-button {
+    max-width: 240px;
+  }
+
+  .social-icon-links {
+    max-width: 280px;
+    gap: 0.5rem;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .social-icon-link {
+    font-size: 0.76rem;
   }
 }
