@@ -48,9 +48,7 @@ body {
   color: var(--white);
   min-height: 100vh;
   min-height: 100svh;
-  background:
-    radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
-    linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
+  background: blue;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
