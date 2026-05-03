@@ -46,12 +46,21 @@ body {
 body {
   font-family: "Red Hat Text", Arial, sans-serif;
   color: var(--white);
-  min-height: 100vh;
-  min-height: 100svh;
-  background: blue;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  min-height: 100dvh;
+  background-color: var(--blue-bottom); /* wichtig für overscroll */
+  overscroll-behavior: none;
+}
+
+/* Hintergrund FIX über alles legen */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
+    linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
 }
 
 .linktree {
