@@ -46,27 +46,28 @@ body {
 body {
   font-family: "Red Hat Text", Arial, sans-serif;
   color: var(--white);
+  min-height: 100vh;
   min-height: 100dvh;
-  background-color: var(--blue-bottom); /* wichtig für overscroll */
+  background: linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
+  background-color: var(--blue-bottom);
   overscroll-behavior: none;
 }
 
-/* Hintergrund FIX über alles legen */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
-
-  background:
-    radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
-    linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px);
 }
 
 .linktree {
+  position: relative;
+  z-index: 1;
   width: 100%;
   min-height: 100vh;
-  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
