@@ -172,9 +172,11 @@ h1 {
 
 .social-icon-links {
   width: 100%;
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.7rem;
+  column-gap: 0.7rem;
+  row-gap: 1.6rem;
   align-items: start;
   justify-items: center;
 }
@@ -250,14 +252,15 @@ footer a:focus-visible {
     max-width: 240px;
   }
 
-  .divider,
   .placeholder-button {
     max-width: 240px;
   }
 
   .social-icon-links {
     max-width: 280px;
-    gap: 0.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 0.5rem;
+    row-gap: 1rem;
   }
 
   .social-icon {
