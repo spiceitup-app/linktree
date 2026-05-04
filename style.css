@@ -51,7 +51,7 @@ body {
   background:
     radial-gradient(circle at 50% 12%, rgba(21, 72, 255, 0.65) 0, rgba(21, 72, 255, 0) 190px),
     linear-gradient(180deg, var(--blue-top) 0%, var(--blue-bottom) 100%);
-  background-color: var(--blue-top);
+  background-color: var(--blue-bottom);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
